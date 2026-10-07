@@ -2,44 +2,10 @@
 title: Agent Skills
 description: Use SumUp Agent Skills in AI coding assistants when building payment integrations.
 sidebar:
-  order: 51
+  order: 52
 ---
 
 [Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) let AI coding assistants load focused instructions for specific tasks. We publish SumUp skills in the [`sumup/sumup-skills`](https://github.com/sumup/sumup-skills) repository to help you build terminal and online payment integrations faster and with fewer mistakes.
-
-## Install Skills
-
-If your assistant supports standard Agent Skills folders, install the SumUp skills with:
-
-```bash
-npx skills add https://github.com/sumup/sumup-skills
-```
-
-You can also clone the repository and copy the skill folders into your assistant's skill directory.
-
-| Agent        | Skill directory              |
-| ------------ | ---------------------------- |
-| Claude Code  | `~/.claude/skills/`          |
-| Cursor       | `~/.cursor/skills/`          |
-| OpenCode     | `~/.config/opencode/skills/` |
-| OpenAI Codex | `~/.codex/skills/`           |
-| Pi           | `~/.pi/agent/skills/`        |
-
-For packaged editor and assistant integrations, see [Plugins](/tools/llms/plugins/).
-
-## Discover Skills
-
-Agents and tools that support the [Agent Skills Discovery RFC](https://github.com/cloudflare/agent-skills-discovery-rfc) can discover the SumUp skills from:
-
-```txt
-https://developer.sumup.com/.well-known/agent-skills/index.json
-```
-
-Use this URL in clients that accept a discovery index. Clients that automatically check well-known locations can start from:
-
-```txt
-https://developer.sumup.com
-```
 
 ## Available Skills
 
@@ -58,9 +24,43 @@ After installation, ask your assistant to use the relevant SumUp skill for check
 - "Use `$sumup` to implement a Payment Widget checkout with server-side checkout creation."
 - "Use `$sumup-debug` to troubleshoot 3DS and webhook handling for online payments."
 
+## Install Standalone Skills
+
+To install skills together with MCP configuration, follow [Set up your AI assistant](/tools/llms/setup/). The instructions below install skills on their own; they do not configure an MCP connection or require SumUp credentials.
+
+If your assistant supports standard Agent Skills folders, install the SumUp skills with:
+
+```bash
+npx skills add https://github.com/sumup/sumup-skills
+```
+
+You can also clone the repository and copy the skill folders into your assistant's skill directory.
+
+| Agent        | Skill directory              |
+| ------------ | ---------------------------- |
+| Claude Code  | `~/.claude/skills/`          |
+| Cursor       | `~/.cursor/skills/`          |
+| OpenCode     | `~/.config/opencode/skills/` |
+| OpenAI Codex | `~/.codex/skills/`           |
+| Pi           | `~/.pi/agent/skills/`        |
+
+## Discover Skills
+
+Agents and tools that support the [Agent Skills Discovery RFC](https://github.com/cloudflare/agent-skills-discovery-rfc) can discover the SumUp skills from:
+
+```txt
+https://developer.sumup.com/.well-known/agent-skills/index.json
+```
+
+Use this URL in clients that accept a discovery index. Clients that automatically check well-known locations can start from:
+
+```txt
+https://developer.sumup.com
+```
+
 ## Related
 
-- [Plugins](/tools/llms/plugins/)
+- [Set up your AI assistant](/tools/llms/setup/)
 - [LLMs overview](/tools/llms/)
 - [Agentic workflows](/tools/llms/agent-toolkit/)
 - [SumUp MCP Server](https://mcp.sumup.com/mcp)
